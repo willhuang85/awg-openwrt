@@ -59,6 +59,7 @@ async function getDetails(target, subtarget) {
     if (name && name.startsWith('kernel_')) {
       const vermagicMatch = name.match(/kernel_\d+\.\d+\.\d+(?:-\d+)?[-~]([a-f0-9]+)(?:-r\d+)?_([a-zA-Z0-9_-]+)\.ipk$/);
       if (vermagicMatch) {
+        console.log(target, subtarget, vermagicMatch[1], vermagicMatch[2]);
         vermagic = vermagicMatch[1];
         pkgarch = vermagicMatch[2];
       }
